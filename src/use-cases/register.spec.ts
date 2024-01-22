@@ -15,7 +15,6 @@ describe('Register Use Case', () => {
     })
 
     it('should be able to register', async () => {
-
         const { org } = await sut.execute({
             name: 'Test ORG',
             email: 'test@example.com',
@@ -28,7 +27,6 @@ describe('Register Use Case', () => {
     })
     
     it('should not be able to register with same email twice', async () => {
-
         await sut.execute({
             name: 'Test ORG',
             email: 'test@example.com',
@@ -46,11 +44,9 @@ describe('Register Use Case', () => {
                 contact: '1234-1234',
             })
         ).rejects.toBeInstanceOf(ORGAlreadyExistsError)
-
     })
 
     it('should hash ORG password', async () => {
-
         const { org } = await sut.execute({
             name: 'Test ORG',
             email: 'test@example.com',
@@ -66,5 +62,4 @@ describe('Register Use Case', () => {
 
         expect(isPasswordHashed).toBe(true)
     })
-    
 })
