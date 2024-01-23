@@ -11,7 +11,6 @@ interface RegisterUseCaseRequest {
     email: string,
     password: string,
     address: string,
-    city: string
     contact: string,
 }
 
@@ -22,7 +21,7 @@ interface RegisterUseCaseResponse {
 export class RegisterUseCase {
     constructor(private orgsRepository: ORGsRepository) {}
 
-    async execute({name, email, password, address, city, contact}: RegisterUseCaseRequest) : Promise<RegisterUseCaseResponse> {
+    async execute({name, email, password, address, contact}: RegisterUseCaseRequest) : Promise<RegisterUseCaseResponse> {
         const password_hash = await hash(password, 6)
     
         // email validation

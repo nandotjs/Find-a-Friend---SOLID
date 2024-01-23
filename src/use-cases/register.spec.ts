@@ -20,10 +20,9 @@ describe('Register Use Case', () => {
             email: 'test@example.com',
             password: '123456',
             address: '80020-200',
-            city: 'Curitiba',
             contact: '1234-1234',
         })
-
+        console.log(org.city)
         expect(org.id).toEqual(expect.any(String))
     })
     
@@ -33,7 +32,6 @@ describe('Register Use Case', () => {
             email: 'test@example.com',
             password: '123456',
             address: '80020-200',
-            city: 'Curitiba',
             contact: '1234-1234',
         })
 
@@ -43,7 +41,6 @@ describe('Register Use Case', () => {
                 email: 'test@example.com',
                 password: '123456',
                 address: '80020-200',
-                city: 'Curitiba',
                 contact: '1234-1234',
             })
         ).rejects.toBeInstanceOf(ORGAlreadyExistsError)
@@ -55,7 +52,6 @@ describe('Register Use Case', () => {
             email: 'test@example.com',
             password: '123456',
             address: '80020-200',
-            city: 'Curitiba',
             contact: '1234-1234',
         })
 
