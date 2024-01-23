@@ -15,6 +15,7 @@ export class InMemoryORGsRepository implements ORGsRepository {
             email: data.email,
             password_hash: data.password_hash,
             address: data.address,
+            city: data.city,
             contact: data.contact,
         }
 

@@ -13,6 +13,7 @@ model ORG {
   email         String @unique
   password_hash String
   address       String
+  city          String
   contact       String
 
   pets Pet[]

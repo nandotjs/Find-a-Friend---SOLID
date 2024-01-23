@@ -19,7 +19,8 @@ describe('Register Use Case', () => {
             name: 'Test ORG',
             email: 'test@example.com',
             password: '123456',
-            address: 'test street 404',
+            address: '80020-200',
+            city: 'Curitiba',
             contact: '1234-1234',
         })
 
@@ -31,7 +32,8 @@ describe('Register Use Case', () => {
             name: 'Test ORG',
             email: 'test@example.com',
             password: '123456',
-            address: 'test street 404',
+            address: '80020-200',
+            city: 'Curitiba',
             contact: '1234-1234',
         })
 
@@ -40,7 +42,8 @@ describe('Register Use Case', () => {
                 name: 'Test ORG 2',
                 email: 'test@example.com',
                 password: '123456',
-                address: 'test street 404',
+                address: '80020-200',
+                city: 'Curitiba',
                 contact: '1234-1234',
             })
         ).rejects.toBeInstanceOf(ORGAlreadyExistsError)
@@ -51,7 +54,8 @@ describe('Register Use Case', () => {
             name: 'Test ORG',
             email: 'test@example.com',
             password: '123456',
-            address: 'test street 404',
+            address: '80020-200',
+            city: 'Curitiba',
             contact: '1234-1234',
         })
 

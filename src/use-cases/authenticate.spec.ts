@@ -18,7 +18,8 @@ describe('Authenticate Use Case', () => {
             name: 'Test ORG',
             email: 'test@example.com',
             password_hash: await hash('123456', 6),
-            address: 'test street 404',
+            address: '80020-200',
+            city: 'Curitiba',
             contact: '1234-1234',
         })
 
@@ -42,7 +43,8 @@ describe('Authenticate Use Case', () => {
             name: 'Test',
             email: 'test@example.com',
             password_hash: await hash('123456', 6),
-            address: 'test street 404',
+            address: '80020-200',
+            city: 'Curitiba',
             contact: '1234-1234',
         })
 
