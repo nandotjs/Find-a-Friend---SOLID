@@ -21,9 +21,10 @@ model ORG {
 }
 
 model Pet {
-  id    String @id @default(uuid())
+  id    String  @id @default(uuid())
   breed String
   color String
+  puppy Boolean
   city  String
 
   org    ORG    @relation(fields: [org_id], references: [id])
