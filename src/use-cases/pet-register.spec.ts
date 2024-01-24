@@ -10,7 +10,7 @@ let imPetsRepository: InMemoryPetsRepository
 let imORGsRepository: InMemoryORGsRepository
 let sut: PetRegisterUseCase
 
-describe('Register Use Case', () => {
+describe('Pet Register Use Case', () => {
 
     beforeEach(async () => {
         imPetsRepository = new InMemoryPetsRepository()
@@ -34,7 +34,7 @@ describe('Register Use Case', () => {
             puppy: false,
             orgId: org.id,
         })
-
+        
         expect(pet.id).toEqual(expect.any(String))
         expect(pet.org_id).toEqual(org.id)
         expect(pet.city).toEqual(org.city)
