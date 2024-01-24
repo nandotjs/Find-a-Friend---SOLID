@@ -47,7 +47,7 @@ export class RegisterUseCase {
             city: addressCity,
             contact,
         })
-        console.log(org.city)
+        
         return {
             org,
         }

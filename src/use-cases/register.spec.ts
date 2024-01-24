@@ -22,7 +22,7 @@ describe('Register Use Case', () => {
             address: '80020-200',
             contact: '1234-1234',
         })
-        console.log(org.city)
+        
         expect(org.id).toEqual(expect.any(String))
     })
     
