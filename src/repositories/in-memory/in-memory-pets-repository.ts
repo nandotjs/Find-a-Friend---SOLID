@@ -30,4 +30,8 @@ export class InMemoryPetsRepository implements PetsRepository {
 
         return pet
     }
+
+    async findManyByCity(city: string) {
+        return this.items.filter(item => item.city === city)
+    }
 }
