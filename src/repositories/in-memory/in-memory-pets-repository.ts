@@ -31,7 +31,26 @@ export class InMemoryPetsRepository implements PetsRepository {
         return pet
     }
 
-    async findManyByCity(city: string) {
-        return this.items.filter(item => item.city === city)
+    async findManyByCity(
+            city: string,
+            breed?: string,
+            color?: string,
+            puppy?: boolean
+        ) {
+        let filteredPets: Pet[] = this.items.filter(pet => pet.city === city)
+
+        if (breed) {
+            filteredPets = filteredPets.filter(pet => pet.breed === breed)
+        }
+
+        if (color) {
+            filteredPets = filteredPets.filter(pet => pet.color === color)
+        }
+
+        if (puppy !== undefined) {
+            filteredPets = filteredPets.filter(pet => pet.puppy === puppy)
+        }
+
+        return filteredPets
     }
 }
