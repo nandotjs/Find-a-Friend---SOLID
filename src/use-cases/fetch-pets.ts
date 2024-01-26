@@ -21,7 +21,7 @@ export class FetchPetsUseCase {
 
     async execute({city, breed, color, puppy} : FetchPetsUseCaseRequest) : Promise<FetchPetsUseCaseResponse> {
     
-        const pets = await this.petsRepository.findManyByCity(city, breed, color, puppy)
+        const pets = await this.petsRepository.findManyByCityAndFilters(city, breed, color, puppy)
 
         if(!city.trim()) {
             throw new ResourceNotFoundError()

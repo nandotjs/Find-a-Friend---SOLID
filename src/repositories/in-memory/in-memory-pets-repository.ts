@@ -31,7 +31,7 @@ export class InMemoryPetsRepository implements PetsRepository {
         return pet
     }
 
-    async findManyByCity(
+    async findManyByCityAndFilters(
             city: string,
             breed?: string,
             color?: string,
