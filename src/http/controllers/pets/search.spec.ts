@@ -1,9 +1,8 @@
 import  request  from 'supertest'
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
 import { app } from '../../../app'
-import { prisma } from '../../../lib/prisma'
 
-describe('Details e2e', () => {
+describe('Search pets e2e', () => {
     let tokenJWT: any
 
     beforeAll(async () => {
@@ -34,7 +33,7 @@ describe('Details e2e', () => {
     })
 
 
-    it('should be able get pet details', async () => {
+    it('should be able to search for pets', async () => {
         await request(app.server)
         .post('/pet')
         .set('Authorization', `Bearer ${tokenJWT}`)
@@ -44,15 +43,30 @@ describe('Details e2e', () => {
             puppy: false,
         })
 
-        const pet = await prisma.pet.findFirstOrThrow()
+        await request(app.server)
+        .post('/pet')
+        .set('Authorization', `Bearer ${tokenJWT}`)
+        .send({
+            breed: "dog",
+            color: "black",
+            puppy: true,
+        })
 
+        const city = 'Curitiba'
         const response = await request(app.server)
-        .get(`/pet/${pet.id}/details`)
+        .get(`/pet/${city}/search`)
+        .query({
+            color: 'black',
+            puppy: false,
+        })
         .send()
         
         expect(response.statusCode).toEqual(200)
-        expect(response.body.pet).toEqual(expect.objectContaining({
-            breed: 'cat'
-        }))
+        expect(response.body.pets).toEqual([
+            expect.objectContaining({
+                breed: 'cat',
+                puppy: false,
+            })
+        ])
     })
 })

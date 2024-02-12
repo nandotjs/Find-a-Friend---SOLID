@@ -2,7 +2,7 @@ import  request  from 'supertest'
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
 import { app } from '../../../app'
 
-describe('Authenticate e2e', () => {
+describe('Register e2e', () => {
     let tokenJWT: any
 
     beforeAll(async () => {
