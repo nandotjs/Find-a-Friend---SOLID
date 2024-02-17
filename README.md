@@ -14,5 +14,5 @@
 - [x] Um pet deve estar ligado a uma ORG
 - [x] O usuário que quer adotar, entrará em contato com a ORG via WhatsApp
 - [x] Todos os filtros, além da cidade, são opcionais
-- Para uma ORG acessar a aplicação como admin, ela precisa estar logada
-- JWT na rota de autenticação
+- Um pet só pode ser criado por um admin
+- [x] JWT na rota de autenticação
